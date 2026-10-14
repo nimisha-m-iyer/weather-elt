@@ -140,7 +140,7 @@ htmlcov/
 
 # ==============================
 
-data/raw/
+data/raw/*.json
 data/processed/
 data/warehouse/
 *.parquet
@@ -157,3 +157,6 @@ data/warehouse/
 .ruff_cache/
 .pytype/
 .cache/
+
+data/raw/*.json
+.env
