@@ -140,7 +140,7 @@ htmlcov/
 
 # ==============================
 
-data/raw/*.json
+data/raw/**/*.json
 data/processed/
 data/warehouse/
 *.parquet
