@@ -1,0 +1,159 @@
+# ==============================
+
+# Python
+
+# ==============================
+
+**pycache**/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ==============================
+
+# Virtual Environments
+
+# ==============================
+
+.venv/
+venv/
+env/
+ENV/
+.python-version
+
+# ==============================
+
+# Environment Variables & Secrets
+
+# ==============================
+
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+secrets/
+credentials.json
+
+# ==============================
+
+# Apache Airflow
+
+# ==============================
+
+logs/
+airflow.db
+airflow.db-journal
+airflow-webserver.pid
+airflow.cfg
+webserver_config.py
+airflow_local_settings.py
+standalone_admin_password.txt
+
+# Keep Airflow DAGs and plugins tracked
+
+# dags/
+
+# plugins/
+
+# ==============================
+
+# PostgreSQL
+
+# ==============================
+
+pgdata/
+postgres_data/
+postgresql_data/
+*.dump
+*.backup
+*.sql.gz
+
+# ==============================
+
+# Docker
+
+# ==============================
+
+# Ignore local Docker overrides, but keep templates
+
+docker-compose.override.yml
+docker-compose.override.yaml
+
+# ==============================
+
+# Jupyter Notebooks
+
+# ==============================
+
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# ==============================
+
+# Logs & Temporary Files
+
+# ==============================
+
+*.log
+logs/
+tmp/
+temp/
+*.tmp
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# ==============================
+
+# IDEs & Editors
+
+# ==============================
+
+.vscode/
+.idea/
+*.iml
+
+# ==============================
+
+# Testing & Coverage
+
+# ==============================
+
+.pytest_cache/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# ==============================
+
+# Generated Data
+
+# ==============================
+
+data/raw/
+data/processed/
+data/warehouse/
+*.parquet
+*.csv
+*.jsonl
+
+# ==============================
+
+# Build / Tool Caches
+
+# ==============================
+
+.mypy_cache/
+.ruff_cache/
+.pytype/
+.cache/
