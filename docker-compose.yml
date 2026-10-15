@@ -1,0 +1,42 @@
+services:
+  weather-db:
+    image: postgres:16
+    container_name: weather-db
+    environment:
+      POSTGRES_USER: weather
+      POSTGRES_PASSWORD: weather123
+      POSTGRES_DB: weather
+    ports:
+      - "5432:5432"
+    volumes:
+      - weather-pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U weather -d weather"]
+      interval: 5s
+      retries: 10
+
+  airflow:
+    image: apache/airflow:2.10.5
+    container_name: weather-airflow
+    depends_on:
+      weather-db:
+        condition: service_healthy
+    environment:
+      PGHOST: weather-db
+      PGPORT: "5432"
+      PGUSER: weather
+      PGPASSWORD: weather123
+      PGDATABASE: weather
+      PYTHONPATH: /opt/airflow/project
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ./src:/opt/airflow/project/src
+      - ./sql:/opt/airflow/project/sql
+      - ./data:/opt/airflow/project/data
+    command: standalone
+
+volumes:
+  weather-pgdata:
